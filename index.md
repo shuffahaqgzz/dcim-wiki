@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-23 | Total pages: 147 + 1 reference design
+> Last updated: 2026-06-24 | Total pages: 147 + 18 reference designs + 2 plans
 
 ## Entities (19)
 - [[analytics-ai-engine]] — Intelligence layer untuk anomaly detection, predictive maintenance, RCA, capacity forecasting, dan e
@@ -178,3 +178,7 @@
 - `reference-designs/diagrams/block8-workflow-automation-architecture.html` — Dark-themed SVG architecture diagram untuk Block 8. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block9-external-integrations.md` — Reference design spec lengkap untuk Block 9: Adapter pattern framework, 10 connectors (ITSM, ERP, DMS, NMS, Cloud), health monitoring.
 - `reference-designs/diagrams/block9-external-integrations-architecture.html` — Dark-themed SVG architecture diagram untuk Block 9. Buka di browser untuk visualisasi interaktif.
+
+## Plans (2)
+- `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.
+- `plans/phase12-task-breakdown.md` — Detailed task breakdown Phase 1 & 2 dengan dependencies dan estimasi.

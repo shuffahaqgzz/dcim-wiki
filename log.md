@@ -171,3 +171,9 @@
 - Total size: ~550KB spec + ~310KB diagrams = ~860KB
 - Blocks: B1(Infra) B2(DI&I) B3(Asset) B4(CMDB) B5(Dashboard) B6(SIEM) B7(Analytics) B8(Workflow) B9(Integrations)
 - All in ~/dcim-wiki/reference-designs/
+
+## [2026-06-24] reorganize | Plans moved to ~/dcim-wiki/plans/
+- Moved: implementation-plan.md → plans/implementation-plan.md
+- Copied: ~/.hermes/plans/phase12-task-breakdown.md → plans/phase12-task-breakdown.md
+- Removed: ~/.hermes/plans/ (duplicate files)
+- Updated: index.md (added Plans section)
