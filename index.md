@@ -159,7 +159,7 @@
 - [[dcim-technology-decisions]] — Key technology decisions untuk DCIM platform.
 - [[dcim-testing-strategy]] — Complete testing strategy untuk DCIM platform.
 
-## Reference Designs (9)
+## Reference Designs (10)
 - `reference-designs/block1-infrastructure-provisioning.md` — Reference design spec lengkap untuk Block 1: PostgreSQL 16, Redis 7, Kafka 3.x, NiFi, Elasticsearch, Prometheus, Grafana, Vault, Network. Untuk tim komparasi dengan implementasi aktual.
 - `reference-designs/diagrams/block1-infrastructure-architecture.html` — Dark-themed SVG architecture diagram untuk Block 1. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block2-data-ingestion-integration.md` — Reference design spec lengkap untuk Block 2: Event schema, Kafka topics, NiFi flows, validation, enrichment, DLQ, lineage, ITSM/ERP/DMS connectors.
@@ -178,6 +178,8 @@
 - `reference-designs/diagrams/block8-workflow-automation-architecture.html` — Dark-themed SVG architecture diagram untuk Block 8. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block9-external-integrations.md` — Reference design spec lengkap untuk Block 9: Adapter pattern framework, 10 connectors (ITSM, ERP, DMS, NMS, Cloud), health monitoring.
 - `reference-designs/diagrams/block9-external-integrations-architecture.html` — Dark-themed SVG architecture diagram untuk Block 9. Buka di browser untuk visualisasi interaktif.
+- `reference-designs/staging-production-environment.md` — Reference design spec lengkap untuk Staging & Production: Dual-environment isolation, CI/CD pipeline, DR, monitoring, security hardening.
+- `reference-designs/diagrams/staging-production-architecture.html` — Dark-themed SVG architecture diagram untuk Staging & Production. Buka di browser untuk visualisasi interaktif.
 
 ## Plans (2)
 - `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.

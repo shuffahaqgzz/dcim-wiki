@@ -177,3 +177,11 @@
 - Copied: ~/.hermes/plans/phase12-task-breakdown.md → plans/phase12-task-breakdown.md
 - Removed: ~/.hermes/plans/ (duplicate files)
 - Updated: index.md (added Plans section)
+
+## [2026-06-24] create | Reference Design — Staging & Production Environment
+- Files: `staging-production-environment.md` + `diagrams/staging-production-architecture.html`
+- Size: ~22KB spec + ~30KB diagram = ~52KB
+- Content: Dual-environment isolation, CI/CD pipeline, DR, monitoring, security hardening
+- Covers: VLAN segmentation, component sizing matrix, deployment strategies, backup/restore, alert escalation
+- Depends on: Block 1 Infrastructure Provisioning
+- Updated index.md (Reference Designs 9 → 10)
