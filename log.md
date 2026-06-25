@@ -234,6 +234,15 @@
 - **Flow:** Wazuh Agent/Syslog → Wazuh Manager (encode/decode + rules) → ES + Kibana → ElastAlert → Tracecat (AbuseIPDB + VirusTotal + AI Agent) → DFIR-IRIS
 - **11 Sections:** Architecture, Core Stack, Data Flow, LME Detail, Tracecat SOAR, DFIR-IRIS, Integration Points, Security, Monitoring, Deployment, Acceptance Criteria
 
+### SIEM SOAR Gap Analysis Generated
+- **Action:** Gap analysis between reference design and actual implementation
+- **Files Created:**
+  - `comparisons/siem-soar-gap-analysis.md` — Gap comparison matrix
+- **Result:** 4/15 Match, 4/15 Different approach, 7/15 Not implemented
+- **P1 Gaps:** CMDB, OT-Safe, RBAC, Audit Trail, HA/DR
+- **P2 Gaps:** Monitoring, Secret Management, Notification
+- **Decision:** Hybrid approach — prioritize P1 for production readiness
+
 ## [2026-06-25] create | Comparison — Data Ingestion Architecture Comparison
 - File: `comparisons/data-ingestion-architecture-comparison.md` (32KB)
 - Covers: Lambda/Kappa/Event-Driven/Hybrid patterns, 5 technology stacks, deployment patterns, processing modes

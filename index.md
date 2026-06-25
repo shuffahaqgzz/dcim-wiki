@@ -179,7 +179,8 @@
 - `reference-designs/block6-siem-soc.md` — Reference design spec lengkap untuk Block 6: Wazuh ingestion, correlation engine (10 rules), incident response workflow, CIS benchmark compliance, SOC API.
 - `reference-designs/diagrams/block6-siem-soc-architecture.html` — Dark-themed SVG architecture diagram untuk Block 6. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/siem-soar.md` — Reference design spec untuk SIEM SOAR (TraceCat + Temporal reference design)
-- `reference-designs/siem-soar-actual-architecture.md` — Arsitektur design SIEM SOAR berdasarkan implementasi aktual (LME + Tracecat + DFIR-IRIS): TraceCat + Temporal, playbook automation, case management, MCP AI agent integration, OT-safe enforcement, 100+ integrations.
+- `reference-designs/siem-soar-actual-architecture.md` — Arsitektur design SIEM SOAR berdasarkan implementasi aktual (LME + Tracecat + DFIR-IRIS)
+- `comparisons/siem-soar-gap-analysis.md` — Gap analysis: reference design vs actual implementation: TraceCat + Temporal, playbook automation, case management, MCP AI agent integration, OT-safe enforcement, 100+ integrations.
 - `reference-designs/diagrams/siem-soar-architecture.html` — Dark-themed SVG architecture diagram untuk SIEM SOAR. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block7-analytics-ai-engine.md` — Reference design spec lengkap untuk Block 7: Time-series pipeline, anomaly detection, predictive maintenance, RCA, capacity forecasting, energy optimization, model training, LLM/RAG.
 - `reference-designs/diagrams/block7-analytics-ai-architecture.html` — Dark-themed SVG architecture diagram untuk Block 7. Buka di browser untuk visualisasi interaktif.
