@@ -225,6 +225,15 @@
   - 100+ pre-built connectors (ITSM, TIP, CMDB, Firewall, Notification)
 - **Dependencies:** Block 1 (infra), Block 2 (DI&I), Block 6 (SIEM/SOC)
 
+### SIEM SOAR Actual Architecture Design Generated
+- **Action:** Generated SIEM SOAR architecture design based on actual implementation
+- **Files Created:**
+  - `reference-designs/siem-soar-actual-architecture.md` (~37KB) — Full architecture spec
+  - `reference-designs/diagrams/siem-soar-actual-architecture.html` (~30KB) — Architecture diagram
+- **Stack:** LME (Wazuh + ES + Kibana + ElastAlert) → Tracecat → DFIR-IRIS
+- **Flow:** Wazuh Agent/Syslog → Wazuh Manager (encode/decode + rules) → ES + Kibana → ElastAlert → Tracecat (AbuseIPDB + VirusTotal + AI Agent) → DFIR-IRIS
+- **11 Sections:** Architecture, Core Stack, Data Flow, LME Detail, Tracecat SOAR, DFIR-IRIS, Integration Points, Security, Monitoring, Deployment, Acceptance Criteria
+
 ## [2026-06-25] create | Comparison — Data Ingestion Architecture Comparison
 - File: `comparisons/data-ingestion-architecture-comparison.md` (32KB)
 - Covers: Lambda/Kappa/Event-Driven/Hybrid patterns, 5 technology stacks, deployment patterns, processing modes
@@ -336,3 +345,18 @@
 - Key Insight: FIT041 = grounded requirements (acknowledges Community limitations), Block 8 = comprehensive implementation blueprint
 - Recommendation: No changes to existing documents; 10 action items for enhancement
 - index.md: Technical Requirements count updated 5 → 6
+
+## [2026-06-25] create | Technical Requirements FIT041 SIEM vs DCIM-Wiki Komparasi
+- File: `technical-requirements/fit041-siem-komparasi.md` (35KB)
+- Source: IF-Technical_Requirements_SIEM-FIT041-20260119.md (Madiansyah Saputra, 20 Jan 2026, v2.0)
+- Target: block6-siem-soc-v3.md + siem-soar.md + siem-soc entity
+- Method: MCP Sequential Thinking (5 thoughts) + Section-by-Section Analysis
+- Status: COMPLEMENTARY — No critical conflicts
+- 37 aspects analyzed across 7 comparison sections
+- Gap Counts: 4 Match, 7 Partial, 18 Missing in FIT041, 8 Missing in DCIM-Wiki
+- Priority Distribution: P1=8, P2=9, P3=7, P4=3
+- FIT041 Unique: Documentation/Training Requirements, EPS Target (10K-20K), Data Retention (Hot 90d/Archive 2yr), Search Speed (≤5s), AlienVault OTX, OpenSearch, SFTP, Signed Agent, Hardening Guide, FIM
+- DCIM-Wiki Unique: TraceCat SOAR, Temporal, IRIS, Detection Engineering, ML Alert Triage, Physical-Cyber Correlation, Deception, Threat Hunting, XDR, OT-Safe, MITRE ATT&CK, MCP AI, Vault, 3 VLANs, Prometheus+Grafana, SOC API (12 endpoints), Playbook-as-Code, 20 Acceptance Criteria
+- Key Insight: FIT041 = requirements layer (what to build), DCIM-Wiki = implementation layer (how to build). DCIM-Wiki 3x more comprehensive.
+- Recommendation: No changes to existing documents; 10 items to add to DCIM-Wiki (Documentation, Training, EPS, Retention, Search Speed, OTX, OpenSearch, Signed Agent, Hardening, FIM)
+- index.md: Technical Requirements count updated 6 → 7
