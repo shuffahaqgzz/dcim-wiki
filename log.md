@@ -237,6 +237,13 @@
 - Finds: 3 P1 critical gaps (no HA, no real-time, single Kafka broker), 5 P2 high gaps, 6 P3 medium gaps
 - Key finding: Actual uses "Telegraf-centric" architecture vs "NiFi-centric" reference design
 
+## [2026-06-25] create | Technical Requirements — v4.2 Pipeline Architecture Komparasi
+- File: `technical-requirements/v4.2-pipeline-architecture-komparasi.md` (32KB)
+- Compares: v4.2-pipeline-architecture.md (actual implementation) vs DCIM-Wiki knowledge base (Block 1-9)
+- Covers: 14 layers (L1-L14), architecture pattern assessment, gap matrix, connection mapping
+- Finds: COMPLEMENTARY status, 1 P1 gap (Kafka HA), 3 P2 gaps, 5 P3 gaps
+- Key finding: v4.2 provides implementation details not in DCIM-Wiki; DCIM-Wiki provides reference design not in v4.2
+
 ## [2026-06-25] create | Technical Requirements — FIT041 Komparasi
 - File: `technical-requirements/fit041-data-ingestion-komparasi.md` (32KB)
 - Compares: IF-Technical_Requirements_Data_Ingestion-FIT041-20260119.md (Requirements) vs Block 2 Reference Design (Implementation)
@@ -271,3 +278,61 @@
 - Key Decision: CMDB bidirectional approach recommended over FIT041 uni-directional
 - Action Items: 5 minor items (XLSX support, Part Number, Lease/Owned, Last Audit Date, SLA Level)
 - Recommendation: No changes needed to existing documents; DCIM-Wiki is comprehensive implementation spec
+
+## [2026-06-26] create | Technical Requirements Block 7 — Analytics & AI Engine
+- File: `reference-designs/block7-analytics-ai-engine-technical-requirements.md` (35KB)
+- Sections: 12 (Executive Summary, System, Functional, Non-Functional, Data, API, Integration, Security, Observability, Acceptance Criteria, Risk, Open Questions)
+- Functional Requirements: 32 items across 8 modules (Time-Series, Anomaly Detection, Predictive Maintenance, RCA, Capacity, Energy, Model Training, LLM/RAG)
+- Acceptance Criteria: 32 items with evidence requirements
+- API Endpoints: 24 endpoints across 7 API groups
+- Kafka Topics: 6 topics for analytics pipeline
+- Integration Points: 5 upstream, 5 downstream systems
+- Security: RBAC with 3 roles, audit trail, encryption at rest/transit
+- Monitoring: 9 metrics, 5 dashboards, 5 alert rules
+- Risk Items: 8 risks with mitigations
+- Open Questions: 7 decision points for owner
+- Depends on: Block 1 (Infrastructure), Block 2 (DI&I), Block 4 (CMDB)
+## [2026-06-26] create | Technical Requirements Block 7 — Analytics & AI Engine
+- File: `reference-designs/block7-analytics-ai-engine-technical-requirements.md` (35KB)
+- Sections: 12 (Executive Summary, System, Functional, Non-Functional, Data, API, Integration, Security, Observability, Acceptance Criteria, Risk, Open Questions)
+- Functional Requirements: 32 items across 8 modules (Time-Series, Anomaly Detection, Predictive Maintenance, RCA, Capacity, Energy, Model Training, LLM/RAG)
+- Acceptance Criteria: 32 items with evidence requirements
+- API Endpoints: 24 endpoints across 7 API groups
+- Kafka Topics: 6 topics for analytics pipeline
+- Integration Points: 5 upstream, 5 downstream systems
+- Security: RBAC with 3 roles, audit trail, encryption at rest/transit
+- Monitoring: 9 metrics, 5 dashboards, 5 alert rules
+- Risk Items: 8 risks with mitigations
+- Open Questions: 7 decision points for owner
+- Depends on: Block 1 (Infrastructure), Block 2 (DI&I), Block 4 (CMDB)
+
+## [2026-06-26] create | Technical Requirements FIT041 Analytics & AI Engine vs DCIM-Wiki — Komparasi
+- File: `technical-requirements/fit041-analytics-ai-komparasi.md` (27KB)
+- Compares: IF-Technical_Requirements_Analytics_AI_Engine-FIT041-20260119.md (Requirements) vs Block 7 Reference Design + Technical Requirements (Implementation)
+- Method: MCP Sequential Thinking (5 thoughts)
+- Result: COMPLEMENTARY — no critical conflicts; both documents serve different layers
+- Key findings: FIT041 = requirements layer (what), DCIM-Wiki = implementation layer (how)
+- Total Aspects Analyzed: 29
+- Gap Counts: 7 Match, 7 Partial, 12 Missing in FIT041, 3 Missing in DCIM-Wiki
+- Priority Distribution: P1=1, P2=8, P3=7, P4=3
+- FIT041 Unique: Unstructured data, Data Lake, Vector DB, Tenant Isolation, Proxmox, Spark/Dask
+- DCIM-Wiki Unique: Energy Optimization, RCA Engine, Model Training Pipeline, 24 APIs, 32 Acceptance Criteria, Risk & Mitigation
+- Significant Differences: Tech stack (Spark vs Flink), Integration direction (uni vs bidirectional)
+- Recommendation: No changes needed to existing documents; DCIM-Wiki is comprehensive implementation spec
+
+## [2026-06-25] create | Technical Requirements FIT041 Workflow Automation vs DCIM-Wiki Komparasi
+- File: `technical-requirements/fit041-workflow-automation-komparasi.md`
+- Source: IF-Technical_Requirements_Workflow_Automation-FIT041-20260119.md (Fadel Muhammad, 20 Jan 2026)
+- Target: block8-workflow-automation.md + workflow-automation entity + workflow-automation-patterns concept
+- Method: MCP Sequential Thinking (4 thoughts) + dcim-reference-design skill
+- Status: COMPLEMENTARY — No critical conflicts
+- 22 aspects analyzed across 12 comparison points
+- Gap Counts: 6 Match, 9 Partial, 5 Missing in FIT041, 2 Missing in Block 8
+- FIT041 Missing (P1): Approval Workflows, Auto-Remediation, Escalation Rules
+- FIT041 Missing (P2): Runbook Engine, Status Model Enhancement, ITSM Detail
+- Block 8 Missing (P2): Documentation Requirements, Training Requirements
+- FIT041 Unique: 3-tier Sizing, Documentation/Training Requirements, Community License acknowledgment
+- Block 8 Unique: 10-State Machine, Safety Guards, 4-Level Escalation, Dual-Engine (n8n+Temporal), 18 Acceptance Criteria
+- Key Insight: FIT041 = grounded requirements (acknowledges Community limitations), Block 8 = comprehensive implementation blueprint
+- Recommendation: No changes to existing documents; 10 action items for enhancement
+- index.md: Technical Requirements count updated 5 → 6

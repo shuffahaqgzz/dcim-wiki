@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-25 | Total pages: 147 + 18 reference designs + 1 technical requirements + 2 plans
+> Last updated: 2026-06-26 | Total pages: 147 + 18 reference designs + 4 technical requirements + 2 plans
 
 ## Entities (19)
 - [[analytics-ai-engine]] — Intelligence layer untuk anomaly detection, predictive maintenance, RCA, capacity forecasting, dan e
@@ -189,10 +189,14 @@
 - `reference-designs/staging-production-environment.md` — Reference design spec lengkap untuk Staging & Production: Dual-environment isolation, CI/CD pipeline, DR, monitoring, security hardening.
 - `reference-designs/diagrams/staging-production-architecture.html` — Dark-themed SVG architecture diagram untuk Staging & Production. Buka di browser untuk visualisasi interaktif.
 
-## Technical Requirements (3)
+## Technical Requirements (6)
 - `technical-requirements/fit041-data-ingestion-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements (FIT041) dengan DCIM-Wiki knowledge base. Section-by-section analysis, gap matrix, connection mapping.
 - `technical-requirements/fit041-cmdb-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements CMDB (FIT041) dengan Block 4 Reference Design. 43 aspects analyzed, Neo4j vs PostgreSQL decision point.
 - `technical-requirements/fit041-asset-repository-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Asset Repository (FIT041) dengan Block 3 Reference Design. 12 sections, 100% alignment score, COMPLEMENTARY status.
+- `reference-designs/block7-analytics-ai-engine-technical-requirements.md` — Technical Requirements untuk Block 7 Analytics & AI Engine. 12 sections, 32 acceptance criteria, anomaly detection, predictive maintenance, RCA, capacity forecasting, energy optimization, LLM/RAG.
+- `technical-requirements/fit041-analytics-ai-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Analytics & AI Engine (FIT041) dengan Block 7 Reference Design. 29 aspects analyzed, COMPLEMENTARY status, DCIM-Wiki lebih komprehensif.
+- `technical-requirements/v4.2-pipeline-architecture-komparasi.md` — Komparasi & alignment antara arsitektur implementasi aktual (v4.2) dengan DCIM-Wiki knowledge base. 14 layers analyzed, architecture pattern assessment, gap matrix, connection mapping.
+- `technical-requirements/fit041-workflow-automation-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Workflow Automation (FIT041) dengan Block 8 Reference Design. 22 aspects analyzed, 5 gaps in FIT041 (Approval, Runbook, Remediation, Escalation, Status Model), 2 gaps in Block 8 (Documentation, Training). COMPLEMENTARY status.
 
 ## Plans (2)
 - `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.
