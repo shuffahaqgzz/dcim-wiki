@@ -224,3 +224,50 @@
   - Docker Swarm deployment (23 replicas, 32+ cores, 64+ GB RAM)
   - 100+ pre-built connectors (ITSM, TIP, CMDB, Firewall, Notification)
 - **Dependencies:** Block 1 (infra), Block 2 (DI&I), Block 6 (SIEM/SOC)
+
+## [2026-06-25] create | Comparison — Data Ingestion Architecture Comparison
+- File: `comparisons/data-ingestion-architecture-comparison.md` (32KB)
+- Covers: Lambda/Kappa/Event-Driven/Hybrid patterns, 5 technology stacks, deployment patterns, processing modes
+- Includes: DCIM source systems matrix, protocol complexity, enrichment requirements, recommendation matrix, gap comparison template
+- Recommendation: Hybrid Architecture + NiFi/Kafka/Flink Stack
+
+## [2026-06-25] create | Comparison — v4.2 Gap Analysis
+- File: `comparisons/v4.2-gap-analysis.md` (23KB)
+- Compares: v4.2-pipeline-architecture.md (actual implementation) vs Block 2 Reference Design
+- Finds: 3 P1 critical gaps (no HA, no real-time, single Kafka broker), 5 P2 high gaps, 6 P3 medium gaps
+- Key finding: Actual uses "Telegraf-centric" architecture vs "NiFi-centric" reference design
+
+## [2026-06-25] create | Technical Requirements — FIT041 Komparasi
+- File: `technical-requirements/fit041-data-ingestion-komparasi.md` (32KB)
+- Compares: IF-Technical_Requirements_Data_Ingestion-FIT041-20260119.md (Requirements) vs Block 2 Reference Design (Implementation)
+- Method: MCP Sequential Thinking + dcim-comparison skill
+- Result: COMPLEMENTARY — no critical conflicts; both documents serve different layers
+- Key findings: FIT041 = requirements layer (what), Block 2 = implementation layer (how)
+
+## [2026-06-25] create | Technical Requirements CMDB — FIT041 Komparasi
+- File: `technical-requirements/fit041-cmdb-komparasi.md` (34KB)
+- Compares: IF-Technical_Requirements_CMDB-FIT041-20260119.md (Requirements) vs Block 4 Reference Design (Implementation)
+- Method: MCP Sequential Thinking + dcim-reference-design skill
+- Result: COMPLEMENTARY — no critical conflicts; both documents serve different layers
+- Key findings: FIT041 = requirements layer (what), Block 4 = implementation layer (how)
+- Decision point: Neo4j (FIT041 preference) vs PostgreSQL (Block 4) — recommend PostgreSQL for Phase 1
+- Gaps: 43 aspects analyzed — 4 P1 (ITSM, DB decision, schema, discovery), 14 P2, 5 P3, 1 P4
+- Action items: Add ITSM integration, Data Classification, Monitoring/Workflow integration to Block 4
+- Gaps: 14 items only in Block 2, 14 items only in FIT041, 10 partial matches, 3 full matches
+- Priorities: 8 P1 (DLQ retry, lineage SQL, security, ITSM, circuit breaker, data quality, error classification, acceptance criteria)
+- Recommendation: No changes needed to existing documents; add FIT041 as wiki reference
+
+## [2026-06-25] create | Technical Requirements Asset Repository — FIT041 Komparasi
+- File: `technical-requirements/fit041-asset-repository-komparasi.md` (28KB)
+- Compares: IF-Technical_Requirements_Asset_Repository-FIT041-20260119.md (Requirements) vs Block 3 Reference Design (Implementation)
+- Method: MCP Sequential Thinking
+- Result: COMPLEMENTARY — no critical conflicts; both documents serve different layers
+- Key findings: FIT041 = requirements layer (what), Block 3 = implementation layer (how)
+- Alignment Score: 100% (all FIT041 requirements covered in DCIM-Wiki)
+- DCIM-Wiki Supersession: 100% (covers all FIT041 items + more)
+- FIT041 Coverage: ~55% (missing: reconciliation, data quality, NVR, monitoring, acceptance criteria)
+- Significant Difference: CMDB integration direction (uni-directional in FIT041 vs bidirectional in DCIM-Wiki)
+- Gaps: 12 items only in DCIM-Wiki, 5 items only in FIT041
+- Key Decision: CMDB bidirectional approach recommended over FIT041 uni-directional
+- Action Items: 5 minor items (XLSX support, Part Number, Lease/Owned, Last Audit Date, SLA Level)
+- Recommendation: No changes needed to existing documents; DCIM-Wiki is comprehensive implementation spec

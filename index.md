@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-24 | Total pages: 147 + 18 reference designs + 2 plans
+> Last updated: 2026-06-25 | Total pages: 147 + 18 reference designs + 1 technical requirements + 2 plans
 
 ## Entities (19)
 - [[analytics-ai-engine]] — Intelligence layer untuk anomaly detection, predictive maintenance, RCA, capacity forecasting, dan e
@@ -106,7 +106,7 @@
 - [[workflow-state-machine]] — State machine untuk workflow automation.
 - [[workflow-troubleshooting-runbook]] — Workflow automation troubleshooting procedures.
 
-## Comparisons (33)
+## Comparisons (35)
 - [[api-gateway-comparison]] — Perbandingan API gateways.
 - [[authentication-solution-comparison]] — Perbandingan authentication solutions.
 - [[backup-solution-comparison]] — Perbandingan backup solutions.
@@ -115,12 +115,14 @@
 - [[cloud-provider-comparison]] — Perbandingan cloud providers untuk DCIM integration.
 - [[configuration-management-comparison]] — Perbandingan configuration management tools.
 - [[container-orchestration-comparison]] — Perbandingan container orchestration.
+- [[data-ingestion-architecture-comparison]] — Perbandingan mendalam arsitektur data ingestion: Lambda/Kappa/Event-Driven/Hybrid, technology stacks (NiFi+Kafka+Flink vs Kafka-native vs Pulsar), deployment patterns, processing modes.
 - [[dcim-component-comparison]] — Perbandingan komponen DCIM dari segi fungsi, data flow, dan dependency.
 - [[deployment-options]] — Perbandingan deployment options untuk DCIM platform.
 - [[dcim-platform-comparison]] — Perbandingan DCIM platforms di market.
 - [[dashboard-framework-comparison]] — Perbandingan dashboard frameworks.
 - [[data-integration-comparison]] — Perbandingan data integration tools.
 - [[data-pipeline-comparison]] — Perbandingan data pipeline solutions.
+- [[v4.2-gap-analysis]] — Gap analysis antara arsitektur aktual (v4.2) dengan Block 2 Reference Design.
 - [[database-replication-comparison]] — Perbandingan database replication strategies.
 - [[database-technology-comparison]] — Perbandingan database technologies yang digunakan di DCIM.
 - [[documentation-platform-comparison]] — Perbandingan documentation platforms.
@@ -186,6 +188,11 @@
 - `reference-designs/diagrams/block9-external-integrations-architecture.html` — Dark-themed SVG architecture diagram untuk Block 9. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/staging-production-environment.md` — Reference design spec lengkap untuk Staging & Production: Dual-environment isolation, CI/CD pipeline, DR, monitoring, security hardening.
 - `reference-designs/diagrams/staging-production-architecture.html` — Dark-themed SVG architecture diagram untuk Staging & Production. Buka di browser untuk visualisasi interaktif.
+
+## Technical Requirements (3)
+- `technical-requirements/fit041-data-ingestion-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements (FIT041) dengan DCIM-Wiki knowledge base. Section-by-section analysis, gap matrix, connection mapping.
+- `technical-requirements/fit041-cmdb-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements CMDB (FIT041) dengan Block 4 Reference Design. 43 aspects analyzed, Neo4j vs PostgreSQL decision point.
+- `technical-requirements/fit041-asset-repository-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Asset Repository (FIT041) dengan Block 3 Reference Design. 12 sections, 100% alignment score, COMPLEMENTARY status.
 
 ## Plans (2)
 - `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.
