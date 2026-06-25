@@ -159,7 +159,11 @@
 - [[dcim-technology-decisions]] — Key technology decisions untuk DCIM platform.
 - [[dcim-testing-strategy]] — Complete testing strategy untuk DCIM platform.
 
-## Reference Designs (10)
+## Reference Designs
+
+### NVR Integration (NEW)
+- `reference-designs/nvr-asset-repository-integration.md` — NVR → Asset Repository integration spec (ONVIF/SNMP/Syslog, multi-vendor, location validation)
+- `reference-designs/diagrams/nvr-asset-repository-integration.html` — NVR integration architecture diagram (dark-themed SVG) (10)
 - `reference-designs/block1-infrastructure-provisioning.md` — Reference design spec lengkap untuk Block 1: PostgreSQL 16, Redis 7, Kafka 3.x, NiFi, Elasticsearch, Prometheus, Grafana, Vault, Network. Untuk tim komparasi dengan implementasi aktual.
 - `reference-designs/diagrams/block1-infrastructure-architecture.html` — Dark-themed SVG architecture diagram untuk Block 1. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block2-data-ingestion-integration.md` — Reference design spec lengkap untuk Block 2: Event schema, Kafka topics, NiFi flows, validation, enrichment, DLQ, lineage, ITSM/ERP/DMS connectors.
@@ -172,6 +176,8 @@
 - `reference-designs/diagrams/block5-web-dashboard-architecture.html` — Dark-themed SVG architecture diagram untuk Block 5. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block6-siem-soc.md` — Reference design spec lengkap untuk Block 6: Wazuh ingestion, correlation engine (10 rules), incident response workflow, CIS benchmark compliance, SOC API.
 - `reference-designs/diagrams/block6-siem-soc-architecture.html` — Dark-themed SVG architecture diagram untuk Block 6. Buka di browser untuk visualisasi interaktif.
+- `reference-designs/siem-soar.md` — Reference design spec untuk SIEM SOAR: TraceCat + Temporal, playbook automation, case management, MCP AI agent integration, OT-safe enforcement, 100+ integrations.
+- `reference-designs/diagrams/siem-soar-architecture.html` — Dark-themed SVG architecture diagram untuk SIEM SOAR. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block7-analytics-ai-engine.md` — Reference design spec lengkap untuk Block 7: Time-series pipeline, anomaly detection, predictive maintenance, RCA, capacity forecasting, energy optimization, model training, LLM/RAG.
 - `reference-designs/diagrams/block7-analytics-ai-architecture.html` — Dark-themed SVG architecture diagram untuk Block 7. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block8-workflow-automation.md` — Reference design spec lengkap untuk Block 8: State machine, ITSM integration, approval workflows, runbook engine, auto-remediation, escalation, n8n/Temporal.

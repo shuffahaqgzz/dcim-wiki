@@ -185,3 +185,42 @@
 - Covers: VLAN segmentation, component sizing matrix, deployment strategies, backup/restore, alert escalation
 - Depends on: Block 1 Infrastructure Provisioning
 - Updated index.md (Reference Designs 9 → 10)
+
+## 2026-06-25
+
+### NVR → Asset Repository Integration Spec Created
+- **Action:** Added NVR (Network Video Recorder) as data source for Asset Repository
+- **Files Created:**
+  - `reference-designs/nvr-asset-repository-integration.md` (37KB) — Full integration spec
+  - `reference-designs/diagrams/nvr-asset-repository-integration.html` (30KB) — Architecture diagram
+- **Files Updated:**
+  - `reference-designs/block1-infrastructure-provisioning.md` — Added NVR infra notes, VLAN, sizing
+  - `reference-designs/block2-data-ingestion-integration.md` — Added NVR connector flows, Kafka topics
+  - `reference-designs/block3-asset-repository.md` — Added NVR data model, API extensions, location validation
+  - `index.md` — Added NVR entries to Reference Designs section
+- **Key Decisions:**
+  - Multi-vendor: ONVIF standard (Layer 1) + vendor extensions (Layer 2, optional)
+  - Scale: 1-3 NVR head units, 10-150 cameras, 1 site
+  - Integration path: Direct to Asset Repository (NiFi → Kafka → Consumer → PostgreSQL)
+  - Location validation: camera_verified flag on asset_location
+  - New tables: asset_nvr, asset_camera, camera_location_map
+  - Extended tables: asset (+connector_type), asset_location (+camera_verified)
+  - 5 new Kafka topics: dcim.nvr.* (discovery, health, events, cameras, location)
+  - Protocols: ONVIF (discovery), SNMPv3 (health), Syslog/CEF (events)
+- **Dependencies:** Block 1 (infra), Block 2 (DI&I), Block 3 (Asset Repository)
+
+### SIEM SOAR Reference Design Generated
+- **Action:** Generated SIEM SOAR reference design spec + architecture diagram
+- **Files Created:**
+  - `reference-designs/siem-soar.md` (~47KB) — Full SOAR architecture spec
+  - `reference-designs/diagrams/siem-soar-architecture.html` (~36KB) — Architecture diagram
+- **Components:** TraceCat SOAR, Temporal Workflow Engine, Case Management (IRIS), MCP AI Agent, OT-Safe Enforcement
+- **Sections:** 15 sections — Architecture, Components, Temporal, Case Mgmt, Integrations, MCP, Playbooks, Alert Flow, SIEM Integration, API, Security, Monitoring, Deployment, Acceptance Criteria, Gap Template
+- **Key Decisions:**
+  - TraceCat (Apache 2.0) as SOAR platform — open source, self-hosted
+  - Temporal for workflow orchestration (exactly-once, state persistence)
+  - MCP protocol for AI agent integration (Claude Code, Codex, Cursor)
+  - OT-safe playbook enforcement (no auto-reboot for DCIM systems)
+  - Docker Swarm deployment (23 replicas, 32+ cores, 64+ GB RAM)
+  - 100+ pre-built connectors (ITSM, TIP, CMDB, Firewall, Notification)
+- **Dependencies:** Block 1 (infra), Block 2 (DI&I), Block 6 (SIEM/SOC)

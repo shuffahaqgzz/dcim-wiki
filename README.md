@@ -94,6 +94,7 @@ dcim-wiki/
 | B4 | CMDB | CI model, relationship, topology engine, impact analysis, reconciliation |
 | B5 | Web Dashboard | Vue 3 frontend, API Gateway, RBAC/SSO, NOC/SOC/Facilities views |
 | B6 | SIEM/SOC | Wazuh, Syslog, Kafka→ES, correlation, incident response, compliance |
+| — | SIEM SOAR | TraceCat + Temporal, playbook automation, case management, AI-assisted triage |
 | B7 | Analytics & AI | Anomaly detection, predictive maintenance, RCA, capacity forecasting |
 | B8 | Workflow Automation | State machine, ITSM, approvals, runbook, auto-remediation, escalation |
 | B9 | External Integrations | Adapter pattern, ServiceNow, Jira, SAP/Oracle ERP, DMS connectors |
@@ -165,7 +166,7 @@ Setiap blok punya reference design spec yang mencakup:
 | Frontend | Vue 3, Pinia, ECharts, Tailwind |
 | Workflow | n8n / Temporal |
 | SIEM | Wazuh + Elasticsearch |
-| SOAR | Tracecat |
+| SOAR | Tracecat (self-hosted) |
 
 ---
 
