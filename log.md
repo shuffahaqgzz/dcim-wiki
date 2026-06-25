@@ -2,7 +2,8 @@
 
 > Chronological record of all wiki actions. Append-only.
 > Format: `## [YYYY-MM-DD] action | subject`
-> Actions: ingest, update, query, lint, create, archive, delete
+5|> Actions: ingest, update, query, lint, create, archive, delete
+- 2026-06-25 | MT-018 Review | Review report for Traditional ML Model (mt018-traditional-ml-review.md) — 2 P1, 5 P2 issues identified | Hermes
 > When this file exceeds 500 entries, rotate: rename to log-YYYY.md, start fresh.
 
 ## [2026-06-23] create | Wiki initialized
@@ -261,6 +262,13 @@
 - Covers: 14 layers (L1-L14), architecture pattern assessment, gap matrix, connection mapping
 - Finds: COMPLEMENTARY status, 1 P1 gap (Kafka HA), 3 P2 gaps, 5 P3 gaps
 - Key finding: v4.2 provides implementation details not in DCIM-Wiki; DCIM-Wiki provides reference design not in v4.2
+
+## [2026-06-25] create | Technical Requirements — v4.2 Goal Prompt
+- File: `technical-requirements/v4.2-goal-prompt.md` (4.7KB)
+- Goal: Bridge v4.2 gaps (P1+P2) with 7 action items
+- Items: Kafka HA, TLS, Vault, Schema Registry, Prometheus+Grafana, missing consumers, enhanced validation
+- Scenario: Custom (multi-component infrastructure improvement)
+- Audit score: ~90% (8 verifiable items, 6 stop-if conditions, token budget 150K)
 
 ## [2026-06-25] create | Technical Requirements — FIT041 Komparasi
 - File: `technical-requirements/fit041-data-ingestion-komparasi.md` (32KB)

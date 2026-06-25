@@ -7,7 +7,7 @@ block: 1
 phase: 1
 status: generated
 confidence: high
-tags: [infrastructure, postgresql, redis, kafka, nifi, elasticsearch, prometheus, grafana, vault, docker, kubernetes, network]
+tags: [infrastructure, postgresql, redis, kafka, nifi, elasticsearch, prometheus, grafana, vault, docker, kubernetes, network, nvr, onvif, snmp]
 wiki_pages:
   - infrastructure-provisioning
   - postgresql
@@ -98,9 +98,28 @@ NiFi ───────→ Source System Connectors (BMS, NMS, Server, Cloud)
 Elasticsearch → SIEM Store, Central Logging, Full-text Search
 Prometheus ──→ All services (metrics)
 Grafana ────→ Prometheus, Elasticsearch, PostgreSQL (dashboards)
+NVR ────────→ ONVIF/SNMP/Syslog → NiFi → Kafka → Asset Repository
 ```
 
+### 1b. NVR Infrastructure Notes
+
+> **Full NVR integration spec:** `nvr-asset-repository-integration.md`
+> **Architecture diagram:** `diagrams/nvr-asset-repository-integration.html`
+
+| Requirement | Value | Notes |
+|-------------|-------|-------|
+| NVR VLAN | 10.70.2.0/24 | Separate from Management (10.70.0.0) and Data (10.70.1.0) |
+| NVR Storage | 4 TB per NVR head unit | NAS/SAN for video retention |
+| ONVIF Port | TCP 80/443 | NVR web management |
+| RTSP Port | TCP 554 | Video streaming |
+| SNMP Port | UDP 161 | Health monitoring |
+| Syslog Port | UDP 5140 | Event forwarding |
+| NiFi Connector | Dedicated flow | ONVIF discovery, SNMP poller, syslog receiver |
+| Kafka Topics | 5 new topics | dcim.nvr.* (discovery, health, events, cameras, location) |
+
 ### 1.3 Minimum Hardware Requirements
+
+> **Note:** NVR storage (4 TB per unit) is separate from DCIM infrastructure sizing above. See NVR Integration Spec for details.
 
 | Component | vCPU | RAM | Storage | Network |
 |-----------|------|-----|---------|---------|
@@ -114,6 +133,7 @@ Grafana ────→ Prometheus, Elasticsearch, PostgreSQL (dashboards)
 | Prometheus | 1 | 4 GB | 50 GB SSD | 1 Gbps |
 | Grafana | 1 | 2 GB | 10 GB SSD | 1 Gbps |
 | Vault | 1 | 2 GB | 20 GB SSD | 1 Gbps |
+| NVR Storage (NAS) | — | — | 4 TB per NVR | 1 Gbps |
 | **Total Minimum** | **~22** | **~80 GB** | **~1 TB** | — |
 
 ---

@@ -48,7 +48,8 @@ purpose: >
 13. [Security](#13-security)
 14. [Monitoring & Alerting](#14-monitoring--alerting)
 15. [Acceptance Criteria](#15-acceptance-criteria)
-16. [Gap Comparison Template](#16-gap-comparison-template)
+16. [NVR Connector Flows](#17-nvr-connector-flows)
+17. [Gap Comparison Template](#18-gap-comparison-template)
 
 ---
 
@@ -1348,7 +1349,42 @@ groups:
 
 ---
 
-## 16. Gap Comparison Template
+## 17. NVR Connector Flows
+
+> **Full spec:** `nvr-asset-repository-integration.md`
+> **Architecture diagram:** `diagrams/nvr-asset-repository-integration.html`
+
+### 17.1 NVR Event Types
+
+| Namespace | Category | Actions | Example |
+|-----------|----------|---------|---------|
+| `security` | `nvr` | `discovery`, `health`, `events` | `security.nvr.discovery` |
+| `security` | `nvr` | `camera_offline`, `disk_full` | `security.nvr.camera_offline` |
+| `security` | `nvr` | `location_verify` | `security.nvr.location_verify` |
+
+### 17.2 NVR Kafka Topics
+
+| Topic | Partitions | Retention | Purpose |
+|-------|-----------|-----------|---------|
+| `dcim.nvr.discovery` | 3 | 7 days | ONVIF probe results |
+| `dcim.nvr.health` | 6 | 3 days | SNMP polling metrics |
+| `dcim.nvr.events` | 6 | 30 days | Syslog events |
+| `dcim.nvr.cameras` | 3 | 7 days | Camera registry sync |
+| `dcim.nvr.location` | 3 | 30 days | Location validation events |
+
+### 17.3 NiFi Flow Summary
+
+| Flow | Input | Protocol | Output Topic |
+|------|-------|----------|-------------|
+| ONVIF Discovery | Timer (24h) | WS-Discovery | `dcim.nvr.discovery` |
+| SNMP Health | Timer (5min) | SNMPv3 | `dcim.nvr.health` |
+| Syslog Events | UDP :5140 | Syslog/CEF | `dcim.nvr.events` |
+| Camera Registry | ONVIF | ONVIF Profiles | `dcim.nvr.cameras` |
+| Asset Sync | Kafka Consumer | REST API | Asset DB (PostgreSQL) |
+
+---
+
+## 18. Gap Comparison Template
 
 ### Gap: [Component Name]
 

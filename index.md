@@ -177,7 +177,9 @@
 - `reference-designs/block5-web-dashboard.md` — Reference design spec lengkap untuk Block 5: Vue 3 frontend, API Gateway, RBAC/SSO, 7 views (NOC/SOC/Facilities/CMDB/SLA/Logs/Tasks), responsive design.
 - `reference-designs/diagrams/block5-web-dashboard-architecture.html` — Dark-themed SVG architecture diagram untuk Block 5. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/block6-siem-soc.md` — Reference design spec lengkap untuk Block 6: Wazuh ingestion, correlation engine (10 rules), incident response workflow, CIS benchmark compliance, SOC API.
+- `reference-designs/block6-siem-soc-v3.md` — Reference design spec Block 6 v3 (improved): ELK optimization, SOAR integration (Tracecat+Temporal), Vault secrets, HA/DR, 15 improvements.
 - `reference-designs/diagrams/block6-siem-soc-architecture.html` — Dark-themed SVG architecture diagram untuk Block 6. Buka di browser untuk visualisasi interaktif.
+- `reference-designs/diagrams/block6-siem-soc-improved-v3.html` — Dark-themed SVG architecture diagram Block 6 v3 (improved). 15 improvements over v1.
 - `reference-designs/siem-soar.md` — Reference design spec untuk SIEM SOAR (TraceCat + Temporal reference design)
 - `reference-designs/siem-soar-actual-architecture.md` — Arsitektur design SIEM SOAR berdasarkan implementasi aktual (LME + Tracecat + DFIR-IRIS)
 - `comparisons/siem-soar-gap-analysis.md` — Gap analysis: reference design vs actual implementation: TraceCat + Temporal, playbook automation, case management, MCP AI agent integration, OT-safe enforcement, 100+ integrations.
@@ -198,6 +200,7 @@
 - `reference-designs/block7-analytics-ai-engine-technical-requirements.md` — Technical Requirements untuk Block 7 Analytics & AI Engine. 12 sections, 32 acceptance criteria, anomaly detection, predictive maintenance, RCA, capacity forecasting, energy optimization, LLM/RAG.
 - `technical-requirements/fit041-analytics-ai-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Analytics & AI Engine (FIT041) dengan Block 7 Reference Design. 29 aspects analyzed, COMPLEMENTARY status, DCIM-Wiki lebih komprehensif.
 - `technical-requirements/v4.2-pipeline-architecture-komparasi.md` — Komparasi & alignment antara arsitektur implementasi aktual (v4.2) dengan DCIM-Wiki knowledge base. 14 layers analyzed, architecture pattern assessment, gap matrix, connection mapping.
+- `technical-requirements/v4.2-goal-prompt.md` — Goal prompt untuk bridge v4.2 gaps (P1+P2). 7 action items: Kafka HA, TLS, Vault, Schema Registry, Prometheus+Grafana, missing consumers, enhanced validation.
 - `technical-requirements/fit041-workflow-automation-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Workflow Automation (FIT041) dengan Block 8 Reference Design. 22 aspects analyzed, 5 gaps in FIT041 (Approval, Runbook, Remediation, Escalation, Status Model), 2 gaps in Block 8 (Documentation, Training). COMPLEMENTARY status.
 - `technical-requirements/fit041-siem-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements SIEM (FIT041) dengan Block 6 SIEM/SOC + SIEM SOAR Reference Design. 37 aspects analyzed, COMPLEMENTARY status. FIT041 = requirements layer, DCIM-Wiki = implementation layer. 8 P1 gaps in FIT041, 10 items to add to DCIM-Wiki.
 

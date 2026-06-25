@@ -7,7 +7,7 @@ block: 3
 phase: 1
 status: generated
 confidence: high
-tags: [asset-repository, crud, bulk-import, reconciliation, audit-trail, enrichment, redis-cache]
+tags: [asset-repository, crud, bulk-import, reconciliation, audit-trail, enrichment, redis-cache, nvr, camera, location-validation]
 wiki_pages:
   - asset-repository
   - asset-data-model
@@ -46,7 +46,8 @@ purpose: >
 11. [Security](#11-security)
 12. [Monitoring & Alerting](#12-monitoring--alerting)
 13. [Acceptance Criteria](#13-acceptance-criteria)
-14. [Gap Comparison Template](#14-gap-comparison-template)
+14. [NVR Integration Extensions](#15-nvr-integration-extensions)
+15. [Gap Comparison Template](#16-gap-comparison-template)
 
 ---
 
@@ -1339,7 +1340,50 @@ groups:
 
 ---
 
-## 14. Gap Comparison Template
+## 15. NVR Integration Extensions
+
+> **Full spec:** `nvr-asset-repository-integration.md`
+> **Architecture diagram:** `diagrams/nvr-asset-repository-integration.html`
+
+### 15.1 New Tables
+
+| Table | Purpose | Key Fields |
+|-------|---------|------------|
+| `asset_nvr` | NVR device metadata | storage_capacity_gb, channel_count, management_ip, sync_status |
+| `asset_camera` | Camera-to-NVR mapping | nvr_asset_id, channel_number, resolution, location_verified |
+| `camera_location_map` | Camera ↔ Location N:M | camera_asset_id, location_id, coverage_type |
+
+### 15.2 Extended Tables
+
+| Table | New Column | Type | Purpose |
+|-------|-----------|------|---------|
+| `asset` | `connector_type` | VARCHAR(30) | Enum includes 'nvr' |
+| `asset_location` | `camera_verified` | BOOLEAN | Camera-validated location |
+| `asset_location` | `camera_verified_at` | TIMESTAMPTZ | Last validation timestamp |
+
+### 15.3 New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/v1/assets/nvr` | Register NVR device |
+| GET | `/api/v1/assets/nvr` | List NVR devices |
+| GET | `/api/v1/assets/nvr/{id}` | Get NVR with cameras |
+| PUT | `/api/v1/assets/nvr/{id}/sync` | Trigger ONVIF sync |
+| GET | `/api/v1/assets/cameras` | List all cameras |
+| POST | `/api/v1/assets/location/{id}/verify` | Trigger location verification |
+
+### 15.4 Location Validation Rules
+
+| Rule | Condition | Action |
+|------|-----------|--------|
+| R1 | Location has ≥1 covering camera | Mark `camera_verified=true` |
+| R2 | Camera offline >5h | Skip validation, alert |
+| R3 | Camera sees unregistered device | Create investigation ticket |
+| R4 | Asset moved without work order | Alert + create incident |
+
+---
+
+## 16. Gap Comparison Template
 
 ### Gap: [Component Name]
 
