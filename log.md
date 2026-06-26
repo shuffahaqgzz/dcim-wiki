@@ -3,8 +3,24 @@
 > Chronological record of all wiki actions. Append-only.
 > Format: `## [YYYY-MM-DD] action | subject`
 5|> Actions: ingest, update, query, lint, create, archive, delete
-- 2026-06-25 | MT-018 Review | Review report for Traditional ML Model (mt018-traditional-ml-review.md) — 2 P1, 5 P2 issues identified | Hermes
+- 2026-06-25 | create | Analytics & AI Engine SLA & Prioritization Framework FINAL — 20 sections, 26 UCs, 5 SLA tiers, 15 DQ rules, 11 Prometheus alerts, 6 business KPIs, RACI governance, 5 decision records, glossary. FIT041 merged (7 governance items absorbed, 12 metrics reconciled, 0 conflicts). 41.5KB | Hermes
+- 2026-06-25 | create | Asset Repository SLA & Prioritization Framework FINAL — 17 sections, 15 UCs, 10 DQ rules, 5 business KPIs, RACI governance, FIT041 100% absorbed, 0 conflicts, 32KB | Hermes
+- 2026-06-25 | create | FIT041 SLA & Prioritization Asset Repository vs DCIM-Wiki Komparasi — 20 aspects, COMPLEMENTARY status, 14 FIT041-unique governance items, 0 conflicts, dual-layer model (business + technical), 27KB | Hermes
+- 2026-06-25 | create | Asset Repository SLA & Prioritization Framework — 15 UCs, 4 SLA tiers, 10 DQ rules, P1-P4 mapping, cache strategy, escalation matrix, 8 Prometheus alerts | Hermes
+- 2026-06-25 | create | FIT041 Use Case Analysis vs DCIM-Wiki comparison — 22 aspects analyzed, PARTIAL status, FIT041 coverage 21% (3/14 UCs), DCIM-Wiki supersession 100% | Hermes
+- 2026-06-25 | create | DI&I Use Case Analysis — 14 use cases mapped, source system matrix (13×14), 5 SLA tiers, data quality per UC, consumer mapping, 8 gaps identified | Hermes
+- 2026-06-25 | create | DI&I Use Case Analysis FINAL — merged FIT041 (3 UCs) + DCIM-Wiki (14 UCs), actors/pre-conditions/flow dari FIT041 diadopsi untuk UC4/UC5/UC8, traceability matrix, 38KB | Hermes
+- 2026-06-25 | create | Analytics & AI Engine Use Case Analysis FINAL — 26 use cases across 8 categories, 71 API endpoints, 15 data quality rules, 5 SLA tiers, 12 downstream consumers, 116KB | Hermes
+- 2026-06-25 | create | FIT041 Use Case Analysis Analytics & AI vs DCIM-Wiki comparison — 3 FIT041 UCs mapped to 26 DCIM-Wiki UCs, 85% alignment, COMPLEMENTARY status, 4 FIT041 unique items, 24KB | Hermes
+- 2026-06-25 | update | Analytics & AI Engine Use Case Analysis TRUE FINAL (v2) — merged FIT041 Use Case Analysis (3 UCs) into DCIM-Wiki. UC8/UC15/UC18/UC24 enriched with actors, pre-conditions, flows, success criteria. 2790 lines, 132KB | Hermes
+- 2026-06-25 | create | Wiki initialized
 > When this file exceeds 500 entries, rotate: rename to log-YYYY.md, start fresh.
+- 2026-06-25 | create | FIT041 Use Case Analysis SIEM vs DCIM-Wiki comparison — 3 FIT041 UCs mapped to 20+ Block 6 subsections, 32 gaps (24 FIT041→Wiki, 8 Wiki→FIT041), 78% alignment, COMPLEMENTARY status. FIT041 unique: UEBA baselines, compliance breadth. Method: MCP Sequential Thinking (4 steps) + Context7 (Wazuh docs) | Hermes
+- 2026-06-25 | create | FIT041 SLA & Prioritization vs DCIM-Wiki comparison — 23 aspects analyzed, COMPLEMENTARY status, 0 conflicts, 7 items to adopt from FIT041 (roles, response times, reporting, maintenance, review, glossary, justification). 3 metric reconciliation needed (throughput 10K vs 5K, uptime 99.95% vs 99.9%, accuracy 99.9% vs 99%). Method: MCP Sequential Thinking (5 steps) | Hermes
+- 2026-06-25 | create | DI&I SLA & Prioritization Framework FINAL — merged FIT041 (requirements layer) + DCIM-Wiki (implementation layer). 17 sections, 14 UCs, 5 SLA tiers, 99.95% uptime, 10K EPS, 99.9% P1 accuracy, roles, reporting, maintenance policy, review process, glossary. 25KB. | Hermes
+- 2026-06-25 | create | SIEM Use Case Analysis FINAL — merged FIT041 (3 UCs) + DCIM-Wiki (20 UCs). 8 categories, 25 API endpoints, 5 SLA tiers, 15 data quality rules, 8 consumers, 22 acceptance criteria. UC17/UC20 enriched with FIT041. UC20 (UEBA) adopted from FIT041. 41KB. | Hermes
+- 2026-06-25 | create | FIT041 Use Case Analysis CMDB SLA & Prioritization vs DCIM-Wiki comparison — 8 sections analyzed, 0 conflicts, COMPLEMENTARY status. All 3 FIT041 UCs already merged (UC6, UC16, UC7). SLA gap: FIT041 has no SLA framework, DCIM-Wiki has 15-section framework. 6/6 requirements covered. Method: MCP Sequential Thinking (5 steps) + dcim-comparison skill. 18KB. | Hermes
+- 2026-06-25 | create | CMDB SLA & Prioritization Framework FINAL — merged FIT041 (3 UCs absorbed) + DCIM-Wiki (16 UCs). 17 sections, 4 SLA tiers, 9 DQ rules, governance framework (RACI, reporting, review, glossary), FIT041 traceability. 0 conflicts, 100% FIT041 coverage, 100% DCIM-Wiki supersession. Method: MCP Sequential Thinking (3 steps). 28KB. | Hermes
 
 ## [2026-06-23] create | Wiki initialized
 - Domain: DCIM Core Platform
@@ -377,3 +393,62 @@
 - Key Insight: FIT041 = requirements layer (what to build), DCIM-Wiki = implementation layer (how to build). DCIM-Wiki 3x more comprehensive.
 - Recommendation: No changes to existing documents; 10 items to add to DCIM-Wiki (Documentation, Training, EPS, Retention, Search Speed, OTX, OpenSearch, Signed Agent, Hardening, FIM)
 - index.md: Technical Requirements count updated 6 → 7
+
+## 2026-06-25
+- [technical-requirements/cmdb-use-case-analysis.md] Use Case Analysis FINAL untuk CMDB (Block 4). 16 use cases, 26 API endpoints, 4 SLA tiers, 9 data quality rules. Merged dari FIT041 + Block 4 Reference Design. Source: IF-Technical_Requirements_CMDB-FIT041-20260119.md + block4-cmdb.md
+
+## 2026-06-25
+- [technical-requirements/fit041-cmdb-use-case-komparasi.md] Komparasi & alignment antara FIT041 Use Case Analysis CMDB (3 UCs) dengan DCIM-Wiki (16 UCs). 24 aspects analyzed, COMPLEMENTARY status. FIT041 coverage 18.75%, DCIM-Wiki supersession 100%. Source: IF-Use_Case_Analysis_CMDB-FIT041-20260121.md + cmdb-use-case-analysis.md + block4-cmdb.md
+
+## 2026-06-25
+- [technical-requirements/cmdb-use-case-analysis-final.md] FINAL Use Case Analysis CMDB — merged FIT041 UCs (3) + DCIM-Wiki (16). UC6, UC16, UC7 enriched dengan FIT041 actors/pre-conditions/flow. Drift detection, financial integration, capacity planning concepts adopted. 1,214 lines. Source: IF-Use_Case_Analysis_CMDB-FIT041-20260121.md + cmdb-use-case-analysis.md + block4-cmdb.md
+
+## 2026-06-25 — Workflow Automation Use Case Analysis
+
+- **Document:** `technical-requirements/workflow-automation-use-case-analysis-final.md`
+- **Type:** Use Case Analysis (Final)
+- **Block:** 8 (Workflow Automation)
+- **UC Count:** 17 use cases across 6 categories
+- **FIT041 Gaps:** 8 UCs (47%) missing in FIT041
+- **Key Gaps:** Approval Workflows, Runbook Engine, Auto-Remediation, Escalation Rules
+- **API Endpoints:** 22 endpoints
+- **Acceptance Criteria:** 25 items across 7 categories
+- **Status:** ✅ Generated
+
+
+## 2026-06-25 — FIT041 Workflow Automation Use Case Analysis Comparison
+
+- **Document:** `technical-requirements/fit041-workflow-automation-use-case-komparasi.md`
+- **Type:** Use Case Analysis Comparison
+- **FIT041 Source:** IF-Use_Case_Analysis_Workflow_Automation-FIT041-20260121.md
+- **DCIM-Wiki Source:** workflow-automation-use-case-analysis-final.md
+- **FIT041 UCs:** 3 operational scenarios (Service Restart, Decommission, Maintenance)
+- **DCIM-Wiki UCs:** 17 technical UCs across 6 categories
+- **Mapping:** 3 FIT041 UCs → 13 DCIM-Wiki UCs (composed)
+- **FIT041 Gaps:** 6 items (Workflow creation, Approval, Safety guards, Escalation, API specs, Data quality)
+- **DCIM-Wiki Gaps:** 1 item (Physical infrastructure - UPS/PDU)
+- **Status:** ✅ COMPLEMENTARY
+- **Method:** MCP Sequential Thinking (5 thoughts) + MCP Context7 (n8n docs) + dcim-comparison skill
+
+
+## 2026-06-25 — Workflow Automation Use Case Analysis Final v2.0 (Merged)
+
+- **Document:** `technical-requirements/workflow-automation-use-case-analysis-final-v2.md`
+- **Type:** Use Case Analysis (Final Merged)
+- **Block:** 8 (Workflow Automation)
+- **Version:** 2.0 (merged from FIT041 + DCIM-Wiki)
+- **FIT041 Source:** IF-Use_Case_Analysis_Workflow_Automation-FIT041-20260121.md
+- **DCIM-Wiki Source:** workflow-automation-use-case-analysis-final.md (v1.0)
+- **UC Count:** 17 use cases across 6 categories
+- **FIT041 UCs Absorbed:** 3 operational scenarios (Service Restart, Decommission, Maintenance)
+- **UCs Enriched:** 6 (UC4, UC5, UC8, UC10, UC13, UC14)
+- **FIT041 Enrichments:** 3 actors, 3 pre-conditions, 3 flows, 3 success criteria
+- **Acceptance Criteria:** 28 items (3 added from FIT041)
+- **API Endpoints:** 22 endpoints
+- **Status:** ✅ Generated
+- **Method:** MCP Sequential Thinking (4 thoughts) + MCP Context7 (n8n docs) + dcim-comparison skill
+
+- 2026-06-25 | create | SIEM SOAR SLA & Prioritization Framework — 20 UCs, 5 SLA tiers, SOC operational SLAs (MTTA/MTTC/MTTR), 8 Kafka topics, 12 Prometheus metrics, OT-safe enforcement, consumer SLA matrix, 397 lines | Hermes
+- 2026-06-25 | create | FIT041 SLA & Prioritization SIEM vs DCIM-Wiki Komparasi — 25 aspects, 17 gaps (4×P1, 7×P2, 6×P3), ~65% alignment, COMPLEMENTARY. FIT041=99.9% uptime, 15K EPS, 90d hot, regulatory elevator. DCIM-Wiki=Kafka, OT-safe, consumer SLA, Prometheus. Terminology: MTTD/MTTA/MTTC/MTTR | Hermes
+- 2026-06-25 | create | SIEM SOAR SLA & Prioritization Framework FINAL (v2.0) — 17 sections, 20 UCs, 5-metric SOC model, regulatory elevator, hybrid retention, phased EPS, 99.9% uptime, RACI, reporting, governance, 21 acceptance criteria, 714 lines, 35KB. Merged FIT041 + DCIM-Wiki | Hermes
+- 2026-06-26 | create | SIEM/SOAR User Acceptance Criteria (UAC) — 16 core + 7 supplementary = 23 criteria. Baseline: Actual Architecture §11 (LME + Tracecat + DFIR-IRIS). 9 kategori, test methods, evidence, sign-off table, known limitations. | Hermes

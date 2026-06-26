@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-26 | Total pages: 147 + 18 reference designs + 5 technical requirements + 2 plans
+> Last updated: 2026-06-25 | Total pages: 148 + 18 reference designs + 17 technical requirements + 2 plans
 
 ## Entities (19)
 - [[analytics-ai-engine]] — Intelligence layer untuk anomaly detection, predictive maintenance, RCA, capacity forecasting, dan e
@@ -25,7 +25,8 @@
 - [[web-dashboard]] — Presentation layer untuk NOC, SOC, Facilities, dan management views.
 - [[workflow-automation]] — Automation layer untuk ticketing, approval, runbook, remediation, dan escalation.
 
-## Concepts (79)
+## Concepts
+- [[workflow-automation-sla-prioritization-framework-final]] — Workflow Automation SLA & Prioritization Framework (FINAL v2.0, merged FIT041 + DCIM-Wiki) (79)
 - [[api-design-principles]] — Standar API untuk DCIM platform.
 - [[api-gateway-strategy]] — API Gateway design untuk DCIM platform.
 - [[api-versioning-strategy]] — API versioning untuk DCIM platform.
@@ -53,6 +54,15 @@
 - [[data-governance-strategy]] — Data governance framework untuk DCIM platform.
 - [[data-lineage-strategy]] — Data lineage tracking untuk DCIM platform.
 - [[data-quality-framework]] — Standar data quality untuk seluruh DCIM platform.
+- [[dii-sla-prioritization-framework]] — SLA & prioritization framework untuk DI&I layer. 5 tiers, 14 use cases, impact scoring, escalation matrix, consumer SLA matrix.
+- [[dii-sla-prioritization-framework-final]] — **FINAL** merged SLA & Prioritization Framework. FIT041 requirements (99.95% uptime, 10K EPS, roles, reporting) + DCIM-Wiki implementation (impact scoring, auto-assignment, Kafka, Prometheus). 17 sections, 14 UCs, 5 tiers.
+- [[cmdb-sla-prioritization-framework]] — SLA & prioritization framework untuk CMDB layer. 4 tiers, 16 use cases, CI criticality mapping, topology-aware SLA.
+- [[cmdb-sla-prioritization-framework-final]] — **FINAL** merged SLA & Prioritization Framework untuk CMDB. FIT041 (3 UCs absorbed) + DCIM-Wiki (16 UCs). 17 sections, 4 SLA tiers, 9 DQ rules, governance framework, RACI matrix, reporting cadence, glossary. 0 conflicts, 100% FIT041 coverage.
+- [[asset-repository-sla-prioritization-framework]] — SLA & prioritization framework untuk Asset Repository layer. 4 tiers, 15 use cases, cache strategy, enrichment SLA.
+- [[analytics-ai-sla-prioritization-framework]] — SLA & prioritization framework untuk Analytics & AI Engine. 5 tiers, 26 use cases, model lifecycle SLA, accuracy SLA, 15 DQ rules.
+- [[analytics-ai-sla-prioritization-framework-final]] — **FINAL** SLA & prioritization framework merged dari FIT041 (business layer) + DCIM-Wiki (technical layer). 20 sections, 26 UCs, 5 SLA tiers, 15 DQ rules, 11 Prometheus alerts, 6 business KPIs, RACI governance, 5 decision records, glossary.
+- [[siem-soar-sla-prioritization-framework]] — SLA & prioritization framework untuk SIEM SOAR layer. 5 tiers, 20 use cases, SOC operational SLAs (MTTA/MTTC/MTTR), 8 Kafka topics, OT-safe enforcement, 12 Prometheus metrics.
+- [[siem-soar-sla-prioritization-framework-final]] — **FINAL (v2.0)** SLA & Prioritization merged dari FIT041 (governance) + DCIM-Wiki (implementation). 17 sections, 20 UCs, 5 SLA tiers, 5-metric SOC model (MTTD/MTTA/MTTC/MTTR-Resp/MTTR), regulatory violation elevator, hybrid retention (30d hot + 60d warm + 90d cold + 1y archive), phased EPS (1K→5K→15K), 99.9% uptime, RACI roles, daily/weekly/monthly reporting, 6-month review cadence, 21 acceptance criteria. 714 lines, 35KB.
 - [[data-quality-runbook]] — Data quality monitoring dan remediation procedures.
 - [[deployment-runbook]] — Deployment process untuk DCIM platform.
 - [[disaster-recovery-runbook]] — DR runbook untuk DCIM platform.
@@ -105,6 +115,7 @@
 - [[workflow-automation-patterns]] — Patterns untuk workflow automation.
 - [[workflow-state-machine]] — State machine untuk workflow automation.
 - [[workflow-troubleshooting-runbook]] — Workflow automation troubleshooting procedures.
+- [[asset-repository-sla-prioritization-framework-final]] — FINAL SLA & Prioritization Framework untuk Asset Repository. Change priority assignment, asset impact calculation, SLA tier mapping.
 
 ## Comparisons (35)
 - [[api-gateway-comparison]] — Perbandingan API gateways.
@@ -193,16 +204,40 @@
 - `reference-designs/staging-production-environment.md` — Reference design spec lengkap untuk Staging & Production: Dual-environment isolation, CI/CD pipeline, DR, monitoring, security hardening.
 - `reference-designs/diagrams/staging-production-architecture.html` — Dark-themed SVG architecture diagram untuk Staging & Production. Buka di browser untuk visualisasi interaktif.
 
-## Technical Requirements (7)
+## Technical Requirements (16)
 - `technical-requirements/fit041-data-ingestion-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements (FIT041) dengan DCIM-Wiki knowledge base. Section-by-section analysis, gap matrix, connection mapping.
+- `technical-requirements/fit041-dii-use-case-komparasi.md` — Komparasi & alignment antara FIT041 Use Case Analysis (3 UCs) dengan DCIM-Wiki Use Case Analysis (14 UCs). 22 aspects, PARTIAL status, FIT041 coverage 21%, DCIM-Wiki supersession 100%.
+- `technical-requirements/fit041-dii-sla-prioritization-komparasi.md` — Komparasi & alignment antara FIT041 SLA & Prioritization (requirements layer) dengan DCIM-Wiki SLA Framework (implementation layer). 23 aspects, COMPLEMENTARY status, 0 conflicts, 7 items to adopt from FIT041.
+- `technical-requirements/dii-use-case-analysis.md` — Use Case Analysis komprehensif untuk DI&I Layer. 14 use cases, source system matrix, SLA tiers, data quality per UC, consumer mapping, acceptance criteria.
+- `technical-requirements/dii-use-case-analysis-final.md` — **FINAL** Use Case Analysis merged dari FIT041 (3 UCs) + DCIM-Wiki (14 UCs). Actors, pre-conditions, flow steps dari FIT041 diadopsi untuk UC4/UC5/UC8. 14 UCs, 5 SLA tiers, traceability matrix.
 - `technical-requirements/fit041-cmdb-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements CMDB (FIT041) dengan Block 4 Reference Design. 43 aspects analyzed, Neo4j vs PostgreSQL decision point.
 - `technical-requirements/fit041-asset-repository-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Asset Repository (FIT041) dengan Block 3 Reference Design. 12 sections, 100% alignment score, COMPLEMENTARY status.
 - `reference-designs/block7-analytics-ai-engine-technical-requirements.md` — Technical Requirements untuk Block 7 Analytics & AI Engine. 12 sections, 32 acceptance criteria, anomaly detection, predictive maintenance, RCA, capacity forecasting, energy optimization, LLM/RAG.
 - `technical-requirements/fit041-analytics-ai-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Analytics & AI Engine (FIT041) dengan Block 7 Reference Design. 29 aspects analyzed, COMPLEMENTARY status, DCIM-Wiki lebih komprehensif.
+- `technical-requirements/analytics-ai-use-case-analysis-final.md` — **FINAL** Use Case Analysis untuk Analytics & AI Engine. 26 use cases (Time-Series, Anomaly, Predictive, RCA, Capacity, Energy, Model Training, LLM/RAG). 71 API endpoints, 15 data quality rules, 5 SLA tiers, 12 downstream consumers. Merged dari FIT041 + DCIM-Wiki.
+- `technical-requirements/analytics-ai-use-case-analysis-final-v2.md` — **TRUE FINAL** Use Case Analysis dengan FIT041 Use Case Analysis merge (3 UCs). 26 UCs, 2790 lines, 132KB. UC8/UC15/UC18/UC24 enriched dengan FIT041 actors, pre-conditions, flows, success criteria. 7 FIT041 success criteria targets added.
+- `technical-requirements/fit041-analytics-ai-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Analytics & AI Engine (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 UCs mapped ke 26 DCIM-Wiki UCs. 85% alignment score, COMPLEMENTARY status. FIT041 unique items: LLM Reasoning, 24-48h window, clustering, PUE methodology.
 - `technical-requirements/v4.2-pipeline-architecture-komparasi.md` — Komparasi & alignment antara arsitektur implementasi aktual (v4.2) dengan DCIM-Wiki knowledge base. 14 layers analyzed, architecture pattern assessment, gap matrix, connection mapping.
 - `technical-requirements/v4.2-goal-prompt.md` — Goal prompt untuk bridge v4.2 gaps (P1+P2). 7 action items: Kafka HA, TLS, Vault, Schema Registry, Prometheus+Grafana, missing consumers, enhanced validation.
+- `technical-requirements/fit041-analytics-ai-sla-komparasi.md` — Komparasi & alignment antara FIT041 SLA & Prioritization (business layer) dengan DCIM-Wiki SLA Framework (technical layer). 27 aspects, 12 metrics reconciled, 7 governance items to adopt. COMPLEMENTARY status, 0 conflicts, alignment score 70% → ~100% after adoption.
 - `technical-requirements/fit041-workflow-automation-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements Workflow Automation (FIT041) dengan Block 8 Reference Design. 22 aspects analyzed, 5 gaps in FIT041 (Approval, Runbook, Remediation, Escalation, Status Model), 2 gaps in Block 8 (Documentation, Training). COMPLEMENTARY status.
 - `technical-requirements/fit041-siem-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements SIEM (FIT041) dengan Block 6 SIEM/SOC + SIEM SOAR Reference Design. 37 aspects analyzed, COMPLEMENTARY status. FIT041 = requirements layer, DCIM-Wiki = implementation layer. 8 P1 gaps in FIT041, 10 items to add to DCIM-Wiki.
+- `technical-requirements/fit041-siem-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis SIEM (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 UCs (Threat Detection, UEBA, Compliance) mapped ke 20+ subsections Block 6 + SIEM SOAR. 32 gaps analyzed (24 FIT041→Wiki, 8 Wiki→FIT041), 78% alignment score, COMPLEMENTARY status. FIT041 unique: UEBA behavioral baselines, compliance breadth (ISO/SOC2).
+- `comparisons/fit041-siem-sla-prioritization-komparasi.md` — Komparasi FIT041 SLA & Prioritization SIEM dengan DCIM-Wiki knowledge base. 25 aspects analyzed, 17 gaps (4×P1, 7×P2, 6×P3), ~65% alignment. FIT041 = governance + targets (99.9% uptime, 15K EPS, 90d hot retention, regulatory elevator). DCIM-Wiki = implementation depth (Kafka, OT-safe, consumer SLA, Prometheus). COMPLEMENTARY status. Terminology reconciliation: MTTD/MTTA/MTTC/MTTR-Resp/MTTR.
+- `technical-requirements/siem-use-case-analysis-final.md` — **FINAL** Use Case Analysis merged dari FIT041 (3 UCs) + DCIM-Wiki (20 UCs). 8 categories, 25 API endpoints, 5 SLA tiers, 15 data quality rules, 8 downstream consumers, 22 acceptance criteria. UC17/UC20 enriched dengan FIT041 actors/pre-conditions/flows. UC20 (UEBA) adopted from FIT041. 41KB.
+- `technical-requirements/siem-soar-uac.md` — **SIEM/SOAR User Acceptance Criteria (UAC).** 16 core criteria (based on Actual Architecture §11) + 7 supplementary = 23 total. 9 kategori: Infrastructure, Ingestion, Detection, Alert Bridge, Enrichment, AI Triage, Case Management, E2E, Retention. Test methods, evidence requirements, sign-off table. Known limitations documented (single instance, no HA/DR, no network segmentation). Baseline: LME + Tracecat + DFIR-IRIS stack.
+
+- `technical-requirements/cmdb-use-case-analysis.md` — **FINAL** Use Case Analysis untuk CMDB. 16 use cases (CI CRUD, Lifecycle, Relationships, Topology, Impact, Reconciliation, Service Mapping, Health Dashboard, Data Quality, NOC, SIEM, Workflow, Audit). Merged dari FIT041 + Block 4 Reference Design. 26 API endpoints, 4 SLA tiers, 9 data quality rules, traceability matrix.
+- `technical-requirements/fit041-cmdb-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis CMDB (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 UCs mapped ke 16 DCIM-Wiki UCs. 24 aspects analyzed, COMPLEMENTARY status. FIT041 coverage 18.75%, DCIM-Wiki supersession 100%.
+- `technical-requirements/fit041-cmdb-sla-prioritization-komparasi.md` — Komparasi & alignment SLA & Prioritization antara FIT041 Use Case Analysis CMDB dengan DCIM-Wiki knowledge base. 8 sections, 0 conflicts, COMPLEMENTARY status. All 3 FIT041 UCs already merged. SLA gap analysis: FIT041 has no SLA framework, DCIM-Wiki has 15-section framework.
+- `technical-requirements/fit041-asset-sla-prioritization-komparasi.md` — Komparasi & alignment antara FIT041 SLA & Prioritization Asset Repository dengan DCIM-Wiki SLA Framework. 23 aspects analyzed, COMPLEMENTARY status, 0 conflicts, 7 items to adopt from FIT041.
+- `technical-requirements/fit041-workflow-automation-sla-komparasi.md` — Komparasi SLA & Prioritization antara FIT041 Workflow Automation dengan DCIM-Wiki knowledge base. 22 aspects analyzed, COMPLEMENTARY status, 5 gaps in FIT041.
+- `technical-requirements/cmdb-use-case-analysis-final.md` — **FINAL** Use Case Analysis merged dari FIT041 UCs (3) + DCIM-Wiki (16). UC6, UC16, UC7 enriched dengan FIT041 actors/pre-conditions/flow. Drift detection, financial integration, capacity planning concepts adopted. 1,214 lines, 26 API endpoints, 9 data quality rules, traceability matrix.
+- `technical-requirements/asset-repository-use-case-analysis-final.md` — **FINAL** Use Case Analysis untuk Asset Repository. 15 use cases (Asset CRUD, Bulk Import, Search, Lifecycle, Status Transition, Audit, Depreciation, Warranty, Contract, CMDB Recon, Discovery Recon, Enrichment API, NOC Dashboard, Workflow, Compliance). 57 API endpoints, 4 SLA tiers, 9 data quality rules, traceability matrix.
+- `technical-requirements/fit041-asset-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Asset Repository (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 UCs mapped ke 15 DCIM-Wiki UCs. 31 aspects analyzed, COMPLEMENTARY status. FIT041 coverage 20%, DCIM-Wiki supersession 100%. 4 FIT041 unique items (Mobile Scanning, U-space Reservation, Capacity Planning, Provisioning System).
+- `technical-requirements/workflow-automation-use-case-analysis-final.md` — **FINAL** Use Case Analysis untuk Workflow Automation. 17 use cases (Workflow Creation, Execution, Approval, ITSM, Runbook, Remediation, Escalation). 6 categories, 22 API endpoints, 25 acceptance criteria. 47% UCs missing in FIT041 (Approval, Runbook, Remediation, Escalation). Block 8 scope.
+- `technical-requirements/fit041-workflow-automation-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Workflow Automation (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 operational scenarios mapped ke 13 DCIM-Wiki technical UCs. 15 aspects analyzed, 6 gaps in FIT041 (Workflow creation, Approval, Safety guards, Escalation, API specs, Data quality), 1 gap in DCIM-Wiki (Physical infrastructure). COMPLEMENTARY status.
+- `technical-requirements/workflow-automation-use-case-analysis-final-v2.md` — **TRUE FINAL** Use Case Analysis dengan FIT041 Use Case Analysis merge (3 UCs). 17 UCs, 28 acceptance criteria. UC4/UC5/UC8/UC10/UC13/UC14 enriched dengan FIT041 actors, pre-conditions, flows, success criteria. 3 FIT041 success criteria targets added.
 
 ## Plans (2)
 - `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.
