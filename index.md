@@ -134,6 +134,7 @@
 - [[data-integration-comparison]] — Perbandingan data integration tools.
 - [[data-pipeline-comparison]] — Perbandingan data pipeline solutions.
 - [[v4.2-gap-analysis]] — Gap analysis antara arsitektur aktual (v4.2) dengan Block 2 Reference Design.
+- [[v4.3-pipeline-architecture-komparasi]] — Komparasi v4.3 dengan DCIM-Wiki: 85% alignment, P1 100% resolved, 5 remaining gaps (P2-P3).
 - [[database-replication-comparison]] — Perbandingan database replication strategies.
 - [[database-technology-comparison]] — Perbandingan database technologies yang digunakan di DCIM.
 - [[documentation-platform-comparison]] — Perbandingan documentation platforms.
@@ -234,10 +235,14 @@
 - `technical-requirements/fit041-workflow-automation-sla-komparasi.md` — Komparasi SLA & Prioritization antara FIT041 Workflow Automation dengan DCIM-Wiki knowledge base. 22 aspects analyzed, COMPLEMENTARY status, 5 gaps in FIT041.
 - `technical-requirements/cmdb-use-case-analysis-final.md` — **FINAL** Use Case Analysis merged dari FIT041 UCs (3) + DCIM-Wiki (16). UC6, UC16, UC7 enriched dengan FIT041 actors/pre-conditions/flow. Drift detection, financial integration, capacity planning concepts adopted. 1,214 lines, 26 API endpoints, 9 data quality rules, traceability matrix.
 - `technical-requirements/asset-repository-use-case-analysis-final.md` — **FINAL** Use Case Analysis untuk Asset Repository. 15 use cases (Asset CRUD, Bulk Import, Search, Lifecycle, Status Transition, Audit, Depreciation, Warranty, Contract, CMDB Recon, Discovery Recon, Enrichment API, NOC Dashboard, Workflow, Compliance). 57 API endpoints, 4 SLA tiers, 9 data quality rules, traceability matrix.
+- `technical-requirements/mt-decom-n8n-decommission-workflow.md` — **Goal Prompt** untuk n8n Server Decommissioning workflow. Custom scenario (Docker/DevOps). Baseline: Block 8 + FIT041 UC2. 10 acceptance items, 10 stop-if guards, 120K token budget. Multi-step: request → approval → VM shutdown → export → delete → CMDB sync → financial update → cleanup → physical removal.
 - `technical-requirements/fit041-asset-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Asset Repository (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 UCs mapped ke 15 DCIM-Wiki UCs. 31 aspects analyzed, COMPLEMENTARY status. FIT041 coverage 20%, DCIM-Wiki supersession 100%. 4 FIT041 unique items (Mobile Scanning, U-space Reservation, Capacity Planning, Provisioning System).
 - `technical-requirements/workflow-automation-use-case-analysis-final.md` — **FINAL** Use Case Analysis untuk Workflow Automation. 17 use cases (Workflow Creation, Execution, Approval, ITSM, Runbook, Remediation, Escalation). 6 categories, 22 API endpoints, 25 acceptance criteria. 47% UCs missing in FIT041 (Approval, Runbook, Remediation, Escalation). Block 8 scope.
 - `technical-requirements/fit041-workflow-automation-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Workflow Automation (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 operational scenarios mapped ke 13 DCIM-Wiki technical UCs. 15 aspects analyzed, 6 gaps in FIT041 (Workflow creation, Approval, Safety guards, Escalation, API specs, Data quality), 1 gap in DCIM-Wiki (Physical infrastructure). COMPLEMENTARY status.
 - `technical-requirements/workflow-automation-use-case-analysis-final-v2.md` — **TRUE FINAL** Use Case Analysis dengan FIT041 Use Case Analysis merge (3 UCs). 17 UCs, 28 acceptance criteria. UC4/UC5/UC8/UC10/UC13/UC14 enriched dengan FIT041 actors, pre-conditions, flows, success criteria. 3 FIT041 success criteria targets added.
+
+## Guides (1)
+- [[deployment-implementation-guide]] — Comprehensive deployment & implementation guide untuk DCIM Core Platform (8 phases, 20 acceptance criteria)
 
 ## Plans (2)
 - `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.
