@@ -26,7 +26,7 @@ purpose: >
 > **Purpose:** Panduan deployment & implementation komprehensif untuk DCIM Core Platform.
 > **Cara pakai:** Ikuti phase-by-phase. Verifikasi setiap step sebelum lanjut.
 > **Based on:** Actual architecture (Wazuh + Kafka + NiFi + ES + Kibana) + Reference Design (siem-soar.md)
-> **Architecture Diagram:** `diagrams/deployment-implementation-architecture.html`
+> **Architecture Diagram:** `../reference-designs/diagrams/block6-siem-soc-architecture.html`
 
 ---
 
@@ -1732,7 +1732,7 @@ groups:
 
 | Document | Status | Location |
 |----------|--------|----------|
-| Architecture Diagram | ✅ | `diagrams/deployment-implementation-architecture.html` |
+| Architecture Diagram | ✅ | `../reference-designs/diagrams/block6-siem-soc-architecture.html` |
 | Deployment Guide | ✅ | This document |
 | Kafka Operations Guide | ⬜ | `runbooks/kafka-operations-runbook.md` |
 | NiFi Flow Documentation | ⬜ | `docs/nifi-flow-reference.md` |
@@ -2092,7 +2092,7 @@ done
 | UAC Document | `technical-requirements/siem-soar-uac.md` | 27 acceptance criteria |
 | SLA Framework | `concepts/siem-soar-sla-prioritization-framework-final.md` | Priority & SLA model |
 | Gap Analysis | `comparisons/siem-soar-gap-analysis.md` | Reference vs Actual gaps |
-| Architecture Diagram | `diagrams/deployment-implementation-architecture.html` | Visual architecture |
+| Architecture Diagram | `../reference-designs/diagrams/block6-siem-soc-architecture.html` | Visual architecture |
 
 ---
 
