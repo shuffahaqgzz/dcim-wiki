@@ -2,7 +2,7 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-25 | Total pages: 148 + 18 reference designs + 17 technical requirements + 2 plans
+> Last updated: 2026-07-15 | Total pages: 148 + 18 reference designs + 36 technical requirements + 5 plans
 
 ## Entities (19)
 - [[analytics-ai-engine]] — Intelligence layer untuk anomaly detection, predictive maintenance, RCA, capacity forecasting, dan e
@@ -116,8 +116,9 @@
 - [[workflow-state-machine]] — State machine untuk workflow automation.
 - [[workflow-troubleshooting-runbook]] — Workflow automation troubleshooting procedures.
 - [[asset-repository-sla-prioritization-framework-final]] — FINAL SLA & Prioritization Framework untuk Asset Repository. Change priority assignment, asset impact calculation, SLA tier mapping.
+- [[workflow-automation-sla-prioritization-framework]] — Workflow Automation SLA & Prioritization Framework. Escalation priority assignment, workflow impact calculation, SLA tier mapping.
 
-## Comparisons (37)
+## Comparisons (44)
 - [[api-gateway-comparison]] — Perbandingan API gateways.
 - [[authentication-solution-comparison]] — Perbandingan authentication solutions.
 - [[backup-solution-comparison]] — Perbandingan backup solutions.
@@ -157,6 +158,9 @@
 - [[technology-stack]] — Complete technology stack untuk DCIM platform.
 - [[time-series-db-comparison]] — Perbandingan time-series databases.
 - [[workflow-engine-comparison]] — Perbandingan workflow engines.
+- `comparisons/impl-repo-analytics-ai-alignment.md` — Alignment antara repo implementasi Analytics & AI dengan DCIM-Wiki reference design.
+- `comparisons/impl-repo-siem-alignment.md` — Alignment antara repo SIEM dengan DCIM-Wiki reference design.
+- `comparisons/mt023-private-llm-platform-alignment.md` — MT-023 Private LLM Platform — Alignment analysis dengan DCIM-Wiki.
 
 ## Queries (16)
 - [[dcim-api-design]] — Complete API design untuk DCIM platform.
@@ -207,8 +211,10 @@
 - `reference-designs/diagrams/block9-external-integrations-architecture.html` — Dark-themed SVG architecture diagram untuk Block 9. Buka di browser untuk visualisasi interaktif.
 - `reference-designs/staging-production-environment.md` — Reference design spec lengkap untuk Staging & Production: Dual-environment isolation, CI/CD pipeline, DR, monitoring, security hardening.
 - `reference-designs/diagrams/staging-production-architecture.html` — Dark-themed SVG architecture diagram untuk Staging & Production. Buka di browser untuk visualisasi interaktif.
+- `reference-designs/block3-asset-repository-technical-requirements.md` — Technical Requirements untuk Block 3 Asset Repository. Data model, CRUD API, bulk import, reconciliation, audit trail, enrichment API.
+- `reference-designs/server-decommissioning-workflow-architecture.md` — Server Decommissioning Workflow — Architecture diagram: state machine, approval flow, CMDB sync, asset lifecycle.
 
-## Technical Requirements (16)
+## Technical Requirements (36)
 - `technical-requirements/fit041-data-ingestion-komparasi.md` — Komparasi & alignment antara dokumen Technical Requirements (FIT041) dengan DCIM-Wiki knowledge base. Section-by-section analysis, gap matrix, connection mapping.
 - `technical-requirements/fit041-dii-use-case-komparasi.md` — Komparasi & alignment antara FIT041 Use Case Analysis (3 UCs) dengan DCIM-Wiki Use Case Analysis (14 UCs). 22 aspects, PARTIAL status, FIT041 coverage 21%, DCIM-Wiki supersession 100%.
 - `technical-requirements/fit041-dii-sla-prioritization-komparasi.md` — Komparasi & alignment antara FIT041 SLA & Prioritization (requirements layer) dengan DCIM-Wiki SLA Framework (implementation layer). 23 aspects, COMPLEMENTARY status, 0 conflicts, 7 items to adopt from FIT041.
@@ -244,10 +250,17 @@
 - `technical-requirements/fit041-workflow-automation-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Workflow Automation (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 operational scenarios mapped ke 13 DCIM-Wiki technical UCs. 15 aspects analyzed, 6 gaps in FIT041 (Workflow creation, Approval, Safety guards, Escalation, API specs, Data quality), 1 gap in DCIM-Wiki (Physical infrastructure). COMPLEMENTARY status.
 - `technical-requirements/workflow-automation-use-case-analysis-final-v2.md` — **TRUE FINAL** Use Case Analysis dengan FIT041 Use Case Analysis merge (3 UCs). 17 UCs, 28 acceptance criteria. UC4/UC5/UC8/UC10/UC13/UC14 enriched dengan FIT041 actors, pre-conditions, flows, success criteria. 3 FIT041 success criteria targets added.
 - `technical-requirements/n8n-workflows-repo-alignment.md` — Alignment antara repo n8n-workflows (github.com/ledaf78/n8n-workflows) dengan DCIM-Wiki Block 8. ~12% coverage (2/17 UCs), 0 conflicts, 16 gaps (3×P1, 5×P2, 5×P3, 3×P4). AI log analysis unique to repo. Server-Decommissioning empty.
+- `technical-requirements/mt018-goal-prompt.md` — MT-018 Hardening — Goal Prompt: action items untuk hardening DCIM pipeline (Kafka HA, TLS, Vault, Schema Registry, Prometheus, validation).
+- `technical-requirements/mt018-hardening-prompt.md` — MT-018 Hardening Prompt — AI Agent task specification untuk pipeline hardening implementation.
+- `technical-requirements/mt018-manual-guidance.md` — MT-018 Hardening — Manual step-by-step guidance untuk pipeline hardening.
+- `technical-requirements/mt018-traditional-ml-review.md` — MT-018 Traditional ML Model — Review report: model evaluation, performance metrics, improvement recommendations.
 
 ## Guides (1)
 - [[deployment-implementation-guide]] — Comprehensive deployment & implementation guide untuk DCIM Core Platform (8 phases, 20 acceptance criteria)
 
-## Plans (2)
+## Plans (5)
 - `plans/implementation-plan.md` — Implementation plan lengkap: 2 phases, 8 blocks, 62+ tasks, critical path 15-27.5 days.
 - `plans/phase12-task-breakdown.md` — Detailed task breakdown Phase 1 & 2 dengan dependencies dan estimasi.
+- `plans/deployment-implementation-plan-dev-staging-production-v2.md` — DCIM Core Platform Deployment & Implementation Plan v2.0: Dev, Staging, Production environments.
+- `plans/di-telemetry-subtask-breakdown.md` — Data Ingestion & Telemetry sub-task breakdown: detailed task decomposition untuk DI&I layer.
+- `plans/hermes-agentic-ai-operations-control-plane-plan.md` — Hermes Agentic AI Operations Control Plane Plan: multi-agent orchestration untuk DCIM operations.

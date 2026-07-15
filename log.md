@@ -3,6 +3,7 @@
 > Chronological record of all wiki actions. Append-only.
 > Format: `## [YYYY-MM-DD] action | subject`
 5|> Actions: ingest, update, query, lint, create, archive, delete
+- 2026-07-15 | update | Index rebuild — 13 missing files added (1 concept, 3 comparisons, 2 reference designs, 4 tech reqs, 3 plans). Section counts corrected: Comparisons 37→44, Tech Req 16→36, Plans 2→5. Total pages: 148+18+36+5. | Hermes
 - 2026-07-14 | create | Data Ingestion Pipeline Repo Alignment — DCIM_SRV_DATA_COLLECTION vs Block 2 Ref Design: 69% overall, 60 FRs mapped (42% ✅, 37% ⚠️, 22% ❌). P1 gaps: validation processor, SIEM consumer, Prometheus metrics. Kafka 3-node (RF=3, SSL) exceeds ref. DLQ 3-topic better than ref. Lineage OK. ITSM/ERP connectors missing. 26KB | Hermes
 - 2026-06-25 | create | Analytics & AI Engine SLA & Prioritization Framework FINAL — 20 sections, 26 UCs, 5 SLA tiers, 15 DQ rules, 11 Prometheus alerts, 6 business KPIs, RACI governance, 5 decision records, glossary. FIT041 merged (7 governance items absorbed, 12 metrics reconciled, 0 conflicts). 41.5KB | Hermes
 - 2026-06-25 | create | Asset Repository SLA & Prioritization Framework FINAL — 17 sections, 15 UCs, 10 DQ rules, 5 business KPIs, RACI governance, FIT041 100% absorbed, 0 conflicts, 32KB | Hermes
