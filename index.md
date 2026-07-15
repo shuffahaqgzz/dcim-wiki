@@ -117,7 +117,7 @@
 - [[workflow-troubleshooting-runbook]] — Workflow automation troubleshooting procedures.
 - [[asset-repository-sla-prioritization-framework-final]] — FINAL SLA & Prioritization Framework untuk Asset Repository. Change priority assignment, asset impact calculation, SLA tier mapping.
 
-## Comparisons (35)
+## Comparisons (37)
 - [[api-gateway-comparison]] — Perbandingan API gateways.
 - [[authentication-solution-comparison]] — Perbandingan authentication solutions.
 - [[backup-solution-comparison]] — Perbandingan backup solutions.
@@ -135,6 +135,7 @@
 - [[data-pipeline-comparison]] — Perbandingan data pipeline solutions.
 - [[v4.2-gap-analysis]] — Gap analysis antara arsitektur aktual (v4.2) dengan Block 2 Reference Design.
 - [[v4.3-pipeline-architecture-komparasi]] — Komparasi v4.3 dengan DCIM-Wiki: 85% alignment, P1 100% resolved, 5 remaining gaps (P2-P3).
+- [[v4.4-pipeline-architecture-komparasi]] — Komparasi v4.4 dengan DCIM-Wiki: 95% alignment, NiFi Cutover complete, 100% collection via NiFi.
 - [[database-replication-comparison]] — Perbandingan database replication strategies.
 - [[database-technology-comparison]] — Perbandingan database technologies yang digunakan di DCIM.
 - [[documentation-platform-comparison]] — Perbandingan documentation platforms.
@@ -149,6 +150,8 @@
 - [[network-monitoring-comparison]] — Perbandingan NMS solutions.
 - [[phase-1-vs-phase-2]] — Perbandingan dua phase utama DCIM Core Platform.
 - [[siem-solution-comparison]] — Perbandingan SIEM solutions.
+- [[impl-repo-data-ingestion-alignment]] — Repo DCIM_SRV_DATA_COLLECTION vs Block 2 Ref Design: 69% overall, 60 FRs mapped (42% ✅, 37% ⚠️, 22% ❌). Kafka 3-node good, DLQ granular, lineage OK. Gaps: validation depth, SIEM consumer, ITSM/ERP connectors, Prometheus metrics.
+- [[soar-repo-alignment]] — SOAR Repo (n8n workflow) vs DCIM-Wiki: alignment ~25% vs reference, ~60% vs actual. 8 nodes, 3 integrations, 24 gaps (8 P1). Valid MVP, needs production hardening.
 - [[secret-management-comparison]] — Perbandingan secret management solutions.
 - [[service-discovery-comparison]] — Perbandingan service discovery solutions.
 - [[technology-stack]] — Complete technology stack untuk DCIM platform.
@@ -240,6 +243,7 @@
 - `technical-requirements/workflow-automation-use-case-analysis-final.md` — **FINAL** Use Case Analysis untuk Workflow Automation. 17 use cases (Workflow Creation, Execution, Approval, ITSM, Runbook, Remediation, Escalation). 6 categories, 22 API endpoints, 25 acceptance criteria. 47% UCs missing in FIT041 (Approval, Runbook, Remediation, Escalation). Block 8 scope.
 - `technical-requirements/fit041-workflow-automation-use-case-komparasi.md` — Komparasi & alignment antara dokumen Use Case Analysis Workflow Automation (FIT041) dengan DCIM-Wiki knowledge base. 3 FIT041 operational scenarios mapped ke 13 DCIM-Wiki technical UCs. 15 aspects analyzed, 6 gaps in FIT041 (Workflow creation, Approval, Safety guards, Escalation, API specs, Data quality), 1 gap in DCIM-Wiki (Physical infrastructure). COMPLEMENTARY status.
 - `technical-requirements/workflow-automation-use-case-analysis-final-v2.md` — **TRUE FINAL** Use Case Analysis dengan FIT041 Use Case Analysis merge (3 UCs). 17 UCs, 28 acceptance criteria. UC4/UC5/UC8/UC10/UC13/UC14 enriched dengan FIT041 actors, pre-conditions, flows, success criteria. 3 FIT041 success criteria targets added.
+- `technical-requirements/n8n-workflows-repo-alignment.md` — Alignment antara repo n8n-workflows (github.com/ledaf78/n8n-workflows) dengan DCIM-Wiki Block 8. ~12% coverage (2/17 UCs), 0 conflicts, 16 gaps (3×P1, 5×P2, 5×P3, 3×P4). AI log analysis unique to repo. Server-Decommissioning empty.
 
 ## Guides (1)
 - [[deployment-implementation-guide]] — Comprehensive deployment & implementation guide untuk DCIM Core Platform (8 phases, 20 acceptance criteria)

@@ -3,6 +3,7 @@
 > Chronological record of all wiki actions. Append-only.
 > Format: `## [YYYY-MM-DD] action | subject`
 5|> Actions: ingest, update, query, lint, create, archive, delete
+- 2026-07-14 | create | Data Ingestion Pipeline Repo Alignment — DCIM_SRV_DATA_COLLECTION vs Block 2 Ref Design: 69% overall, 60 FRs mapped (42% ✅, 37% ⚠️, 22% ❌). P1 gaps: validation processor, SIEM consumer, Prometheus metrics. Kafka 3-node (RF=3, SSL) exceeds ref. DLQ 3-topic better than ref. Lineage OK. ITSM/ERP connectors missing. 26KB | Hermes
 - 2026-06-25 | create | Analytics & AI Engine SLA & Prioritization Framework FINAL — 20 sections, 26 UCs, 5 SLA tiers, 15 DQ rules, 11 Prometheus alerts, 6 business KPIs, RACI governance, 5 decision records, glossary. FIT041 merged (7 governance items absorbed, 12 metrics reconciled, 0 conflicts). 41.5KB | Hermes
 - 2026-06-25 | create | Asset Repository SLA & Prioritization Framework FINAL — 17 sections, 15 UCs, 10 DQ rules, 5 business KPIs, RACI governance, FIT041 100% absorbed, 0 conflicts, 32KB | Hermes
 - 2026-06-25 | create | FIT041 SLA & Prioritization Asset Repository vs DCIM-Wiki Komparasi — 20 aspects, COMPLEMENTARY status, 14 FIT041-unique governance items, 0 conflicts, dual-layer model (business + technical), 27KB | Hermes
@@ -465,4 +466,35 @@
 - **Key Changes v4.2→v4.3:** Kafka HA, TLS, Vault, Avro+Schema Registry, Event Lineage (L14), Infra Monitoring (L15), Data Quality (L16)
 - **v4.3 EXCEEDS DCIM-Wiki in:** Event Lineage, Data Quality, Infra Monitoring, SQL Local Enrichment, Avro Serialization
 - **Remaining Gaps:** Prometheus+Grafana (P2), SIEM Integration (P2), RBAC (P3), Circuit Breaker (P3), Data Classification (P3)
+- **Status:** ✅ Generated
+
+## 2026-07-01 — v4.4 Pipeline Architecture Komparasi
+
+- **Document:** `comparisons/v4.4-pipeline-architecture-komparasi.md`
+- **Type:** Comparison (v4.4 vs DCIM-Wiki)
+- **Source:** v4.4-pipeline-architecture.md (2026-07-01)
+- **Finds:** 95% alignment (up from 85% in v4.3), NiFi Cutover complete, 100% collection via NiFi
+- **Key Change:** L2 Collection Cutover — all polling (Server, UPS, NAS, Network, CCTV) via NiFi
+- **Telegraf Status:** Deactivated for DCIM collection (only system metrics + infra monitoring)
+- **New Component:** TimescaleDB for AI training data
+- **Remaining Gaps:** 5 items (P2-P3 level, same as v4.3)
+- **Status:** ✅ Generated
+
+## 2026-07-13 — n8n-Workflows Repo Alignment
+
+- **Document:** `technical-requirements/n8n-workflows-repo-alignment.md`
+- **Type:** Comparison (Repo Implementation vs DCIM-Wiki Reference Design)
+- **Source:** https://github.com/ledaf78/n8n-workflows.git + Block 8 + UC Analysis v2 + SLA Framework
+- **Finds:** ~12% coverage (2/17 UCs fully covered), 0 conflicts, 16 gaps (3×P1, 5×P2, 5×P3, 3×P4)
+- **Key Finding:** Repo implements Automated Incident Remediation (Service Restart) with AI-powered log analysis — goes beyond Block 8 scope. Server-Decommissioning directory is empty.
+- **Status:** ✅ Generated
+
+## 2026-07-13 — SOAR Repo Alignment
+
+- **Document:** `comparisons/soar-repo-alignment.md`
+- **Type:** Comparison (Repo Implementation vs DCIM-Wiki Reference Design)
+- **Source:** https://github.com/madicemerlang/SOAR.git + reference-designs/siem-soar.md + actual-architecture
+- **Finds:** ~25% alignment vs reference design, ~60% vs actual architecture. 8 n8n nodes, 3 integrations (VT, AlienVault, DFIR IRIS). 24 gaps (8 P1, 8 P2, 8 P3). 0 conflicts.
+- **Key Finding:** Valid SOAR MVP — alert → enrichment → LLM analysis → case creation works. Main gaps: no TLS, hardcoded IPs, no RBAC, no OT-Safe, no Kafka, no audit trail. Recommends hybrid phased hardening approach.
+- **Method:** MCP Sequential Thinking (4 steps) + repo code analysis
 - **Status:** ✅ Generated
